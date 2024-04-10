@@ -1,0 +1,250 @@
+/* Reset styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e5e5d5;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url('bg-h.png');
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  position: relative;
+  z-index: 2;
+}
+
+.spacer-right {
+    width: 30px;
+}
+.menu-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.menu-btn__burger {
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+}
+
+.menu-btn__burger::before,
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu-btn__burger::before {
+  transform: translateY(-6px);
+}
+
+.menu-btn__burger::after {
+  transform: translateY(6px);
+}
+
+.menu-btn.open .menu-btn__burger {
+  transform: translateX(-50px);
+  background-color: transparent;
+}
+
+.menu-btn.open .menu-btn__burger::before {
+  transform: rotate(45deg) translate(35px, -35px);
+}
+
+.menu-btn.open .menu-btn__burger::after {
+  transform: rotate(-45deg) translate(35px, 35px);
+}
+
+/* Full-screen navigation styles */
+.full-screen-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(204, 136, 153, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+  flex-direction: column;
+}
+
+.full-screen-nav.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.full-img {
+    width:350px;
+    max-width:90vw;
+    height:auto;
+}
+
+.full-screen-nav ul {
+    list-style: none;
+    text-align: center;
+    font-family: Anton;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding: 40px 0;
+}
+.full-screen-nav ul h3 {
+    font-size: 22px;
+    padding: 0 0 30px;
+}
+
+.full-screen-nav li {
+  margin-bottom: 1.5rem;
+}
+
+.full-screen-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 2rem;
+  transition: color 0.3s ease-in-out;
+      color: black;
+}
+
+.full-screen-nav a:hover {
+  color: #ccc;
+}
+
+/* Main content styles */
+main {
+  padding: 2rem;
+}
+
+.poem-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 130px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.poem-container.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.poem-container.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+.poem {
+  color: #333;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: left;
+  white-space: pre-wrap;
+  max-width: 80%;
+}
+
+pre.poem {
+   font-family: "Lora", serif;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+}
+
+.nav-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-btn:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.nav-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Additional styles as needed */
+
+.poem-container {
+  overflow: hidden;
+}
+
+.off-screen-left {
+  transform: translateX(-100%);
+}
+
+.off-screen-right {
+  transform: translateX(100%);
+}
+
+.slide-in-center {
+  animation: slideInCenter 0.2s forwards;
+}
+
+@keyframes slideInCenter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-out-left {
+  animation: slideOutLeft 0.2s forwards;
+}
+
+.slide-out-right {
+  animation: slideOutRight 0.2s forwards;
+}
+
+@keyframes slideOutLeft {
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
