@@ -177,7 +177,7 @@ pre.poem {
 }
 
 .nav-btn {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.1);
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -191,7 +191,7 @@ pre.poem {
 }
 
 .nav-btn:hover {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .nav-btn svg {
