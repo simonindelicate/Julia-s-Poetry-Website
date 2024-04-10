@@ -199,6 +199,18 @@ pre.poem {
   height: 20px;
 }
 
+@media (max-width: 650px) {
+  .poem {
+    font-size: 1.2rem;
+    line-height: 1.4;
+    max-width: 90%;
+  }
+
+  .poem-container {
+    height: calc(100vh - 230px);
+  }
+}
+
 /* Additional styles as needed */
 
 .poem-container {
